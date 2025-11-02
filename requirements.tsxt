@@ -1,0 +1,7 @@
+fastapi==0.116.0
+fastapi-cli==0.0.8
+fastapi-cloud-cli==0.1.2
+DateTime==5.5
+bcrypt==4.3.0
+psycopg2==2.9.10
+passlib==1.7.4
