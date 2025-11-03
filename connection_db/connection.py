@@ -13,4 +13,5 @@ def get_Connection():
             user=os.getenv("DBUSER"),
             password=os.getenv("DBPASSWORD"),
             port=os.getenv("DBPORT"),
+            sslmode="require"
         )
