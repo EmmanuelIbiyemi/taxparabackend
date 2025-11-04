@@ -21,13 +21,14 @@ def signup(user: UserDetails):
         pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
         encryp_pass = pwd_context.hash(user.password)
-        results = cursor.execute("INSERT INTO Taxusers values (%s , %s , %s)",
+        results = cursor.execute("INSERT INTO taxusers values (%s , %s , %s)",
                        (user.Username , user.email , encryp_pass,))
         conn.commit()
         return {
                 "Registraion Sucessfull": user,
                 "Error":"null",
-                "Password":encryp_pass
+                "Password":encryp_pass,
+                "status": 200,
             }
     except psycopg2.IntegrityError as error:
         if "duplicate key value violates unique constraint" in str(error):

@@ -11,4 +11,5 @@ class UserLogin(BaseModel):
 
 class Userblog(BaseModel):
     title:str
-    blogpost:str
+    blogsummary:str
+    blogPost:str
