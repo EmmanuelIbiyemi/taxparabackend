@@ -28,10 +28,10 @@ def signup(user: UserDetails):
                 "Registraion Sucessfull": user,
                 "Error":"null",
                 "Password":encryp_pass,
-                "status": 200,
+                "report": 200,
             }
     except psycopg2.IntegrityError as error:
         if "duplicate key value violates unique constraint" in str(error):
-            return {"User Email Exist Already": 500}
+            return {"User Email Exist Already": 500, "report":500}
     except Exception as e:
         return {"Error": f"{e}"}    
